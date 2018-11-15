@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tunes</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- REQUIRES PAGE TO FULLY RELOAD TO KEEP TURBOLINKS FROM MESSING UP JQUERY -->
+    <meta name="turbolinks-visit-control" content="reload">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+<body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">tune.src</a>
+        <a href="#" data-target="mobile-only" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <!-- Dropdown Trigger -->
+        <% if current_user %>
+          <a class='dropdown-trigger right' href='#' data-target='avatar_drop'>
+              <%= image_tag(url_for(current_user.avatar)) %>
+          </a>
+          <!-- Dropdown Structure -->
+          <ul id='avatar_drop' class='dropdown-content'>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+            <li><%= link_to "Edit User", edit_user_registration_path %></li>
+            <li><%= link_to "Register", user_registration_path %></li>
+          </ul>
+        <% else %>
+          <ul class="right">
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+          </ul>
+        <% end %>
+      </div>
+    </nav>
+  </div>
+
+
+  <ul class="sidenav" id="mobile-only">
+    <li><a href="#">My Tunes</a></li>
+    <li><a href="#">Log Out</a></li>
+  </ul>
+
+        
+
+
+
+
+
+     
+
+    <%= yield %>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
