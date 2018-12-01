@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'autoprefixer-rails', '8.6.5'
 
 
-
+gem "rack", ">= 2.0.6"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use postgresql and sqlite as the database for Active Record
