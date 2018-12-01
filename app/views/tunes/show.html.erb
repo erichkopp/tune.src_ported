@@ -39,7 +39,7 @@
 
     <div class="user_and_content">
       <div class="username_comment">
-        <strong><%= @tune.user.username %></strong>
+        <strong><%= link_to @tune.user.username, @tune.user %></strong>
       </div>
 
       <div class="tune_notes">
