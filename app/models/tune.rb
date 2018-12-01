@@ -11,8 +11,8 @@ class Tune < ApplicationRecord
 
 	private
 		def video_and_type
-			if video.attached? && !video.content_type.in?(%w(video/mp4))
-				errors.add(:video, "must be mp4")
+			if video.attached? && !video.content_type.in?(%w(video/mp4 video/mov))
+				errors.add(:video, "must be .mp4 or .mov")
 			elsif video.attached? == false
 				errors.add(:video, "must have a file attached")
 		end

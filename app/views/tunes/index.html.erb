@@ -75,10 +75,12 @@
           <% end %>    
         </div>
       <% end %>
+        <%= link_to "current_user_show", current_user %>
+
     </div>
 
 
-  <!-- CSS GRID FOR MOBILE/TABLES -->
+  <!-- CSS GRID FOR MOBILE/TABLETS -->
   <div class="container hide-on-med-and-up show-on-medium">
     <div class="wrapper_mobile">
       <% @tunes.each do |tune| %>
@@ -107,7 +109,7 @@
             <% if tune.fiddle_tuning %>
               <%= tune.fiddle_tuning.upcase %>
             <% end %>
-            <% if tune.fiddle_tuning && tune.banjo_tuning %>
+            <% if tune.banjo_tuning != "" %>
               <strong>|</strong>
             <% end %>
             <% if tune.banjo_tuning %>

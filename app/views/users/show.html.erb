@@ -1,0 +1,17 @@
+<div class="comment">
+
+  <div class="comment_avatar">
+    <%= image_tag(url_for(@user.avatar)) %>
+  </div>
+
+  <div class="user_and_content">
+
+    <div class="comment_content">
+    	<strong><%= @user.username %></strong>
+    	<p><%= @user.name %></p>
+    	<p><%= @user.location %></p>
+    	<p><%= @user.bio %></p>
+  	</div>
+
+  </div>
+</div>

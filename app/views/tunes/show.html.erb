@@ -61,7 +61,7 @@
 
         <div class="user_and_content">
           <div class="username_comment">
-            <strong><%= comment.user.username %></strong>
+            <strong><%= link_to comment.user.username, comment.user %></strong>
             <% if comment.user == current_user || current_user && current_user.admin %>
               <%= link_to tune_comment_path(@tune, comment), method: :delete, data: { confirm: 'Are you sure?'} do %>
                 <i class="material-icons comment_delete">delete</i>

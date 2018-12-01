@@ -4,8 +4,19 @@ $primary-color: color("purple", "lighten-2") !default;
 $secondary-color: color("purple", "base") !default;
 @import "materialize";
 
+a {
+	color: purple;
+}
+
 nav {
 	padding: 0 5em;
+	height: 64px;
+	line-height: 64px;
+}
+
+nav .sidenav-trigger i {
+	height: 64px;
+	line-height: 64px;
 }
 
 .key_tuning_sidenav {
